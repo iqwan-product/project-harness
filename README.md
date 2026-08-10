@@ -88,11 +88,13 @@ prompts/
 
 ## Extending it
 
-The checklist grows from incidents, not from ideas.
+The kit records what has been run, not what sounds sensible.
 
-Threshold for adding an item: something failed, the cause is understood, and the correction generalises past the project it happened in. Corrections specific to one stack belong in that project's own documentation.
+Three sources qualify: an incident where something failed and the correction generalises, a capability change where the tooling moved and an item is now wrong or newly possible, or a practice change where a different approach proved better across real work. Anything not yet run does not qualify. Corrections specific to one stack belong in that project's own documentation.
 
-Every item states what it prevents, not only what to do. An item without its reason gets dropped by the next reader, correctly, because applicability cannot be assessed.
+Every item states what it prevents or enables, not only what to do. An item without its reason cannot be assessed for applicability, so the next reader drops it, correctly.
+
+Full threshold in `CONTRIBUTING.md`.
 
 ---
 
