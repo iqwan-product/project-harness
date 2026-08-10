@@ -163,13 +163,13 @@ Rules that hold for the life of the project.
 
 ## Extending this document
 
-Additions come from incidents, not from ideas.
+Additions record what has been run, not what sounds sensible.
 
-Threshold for adding an item: something failed, the cause is understood, and the correction generalises beyond the project it occurred in. Corrections specific to one stack belong in that project's own documentation.
+Three sources qualify: an incident where something failed and the correction generalises beyond the project it occurred in, a capability change where the tooling moved and an item is now wrong or newly possible, or a practice change where a different approach proved better across real work. Anything not yet run does not qualify. Corrections specific to one stack belong in that project's own documentation.
 
-Every item states what it prevents, not only what to do. An item without its reason is dropped by the next reader, correctly, because applicability cannot be assessed.
+Every item states what it prevents or enables, not only what to do. An item without its reason is dropped by the next reader, correctly, because applicability cannot be assessed.
 
-Removals follow the same discipline. Where an item no longer earns its place, cut it and record why in the commit.
+Removals follow the same discipline. Where an item no longer earns its place, cut it and record why in the commit. Capability changes produce as many removals as additions.
 
 ---
 
