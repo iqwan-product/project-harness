@@ -106,7 +106,7 @@ It never appears in the implementation pull request diff. A diff containing its 
 
 ## `docs/qa/README.md`
 
-```markdown
+````markdown
 # QA
 
 One subdirectory per step.
@@ -119,7 +119,7 @@ One subdirectory per step.
 ```
 
 Test cases and reports are tracked. Screenshots are not: large, numerous, and no diff value. The screenshot path is in `.gitignore`.
-```
+````
 
 ---
 
