@@ -112,6 +112,15 @@ PART 1 — operational files
 - A pre-commit hook blocking direct commits to the default branch,
   unless an equivalent hook already exists.
 
+- .gitignore entry for .DS_Store on macOS, alongside the scaffold
+  entries.
+
+The scaffold commit is the one exception to that hook. It lands
+directly on the default branch with the hook bypassed, because it
+is the commit that establishes the branch the hook protects. Every
+commit after it goes through a branch and a pull request. Do not
+open a pull request for the scaffold.
+
 PART 2 — vendored reference
 
 - docs/harness/patterns/ containing all 11 files from
