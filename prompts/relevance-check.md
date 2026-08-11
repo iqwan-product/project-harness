@@ -9,6 +9,17 @@ It produces a project-local copy of the startup checklist with every item marked
 ## Before pasting
 
 The kit must be readable from disk. Where the project floor is already set up, the pattern documents are at `docs/harness/patterns/` inside the project. Otherwise, point at the kit clone.
+
+### When to run this
+
+Run it when the four questions below can be answered honestly. That is usually after a scoping conversation and before the first build step, which may be day one or week three.
+
+Stack selection is not the trigger. It answers none of the four questions.
+
+One deadline matters: run it before the first orchestrator run. If it would have said the agent pattern is overhead for this project, that is worth knowing before a rubric and a nine-stage prompt exist. Everything else it decides is cheap to reverse.
+
+Guessed answers produce a checklist that reads authoritative and encodes the guess. Where duration or team size is genuinely unknown, wait.
+
 Answer the four fit-check questions and paste the answers with the prompt.
 
 1. How many surfaces does this project have?
