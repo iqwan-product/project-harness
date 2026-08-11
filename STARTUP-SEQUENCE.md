@@ -44,7 +44,8 @@ The common failure with a checklist of this shape is adopting all of it. Roughly
 
 **Where: Claude Code, with one step at the user level**
 
-Each item is cheap to do now and expensive to retrofit. `prompts/project-init.md` executes most of this phase.
+Each item is cheap to do now and expensive to retrofit. `prompts/project-init.md` executes this phase, including repository creation where the repository does not yet exist.
+This phase does not depend on Phase 0. The floor is near-universal, so it is often built before the project's scope is settled, and the relevance check follows.
 
 - [ ] **Create the repo and block direct commits to the default branch.** A pre-commit hook is sufficient at this stage. Remote branch protection comes at Gate A, once CI checks exist to require.
 - [ ] **Create the `docs/` scaffold.** Six directories, empty, each with a stub README stating what belongs there. Layout in `patterns/doc-structure.md`, stub contents in `templates/docs-scaffold.md`. Creating them upfront removes the placement decision at the moment a file needs a home, which is when placement decisions are made badly.
@@ -52,6 +53,7 @@ Each item is cheap to do now and expensive to retrofit. `prompts/project-init.md
 - [ ] **Copy agent files into `.claude/agents/`.** Four roles, in `templates/.claude/agents/`. The grader and QA files declare read-only tool sets. This is a structural constraint rather than an instruction: an agent without write access cannot silently repair what it was asked to evaluate. Do not relax it.
 - [ ] **Set the permission model at user level.** Deny paths for credentials and destructive commands, configured once in user-level Claude settings rather than per project. User-level settings reach every project and every worktree. Note the two denial types behave differently: a blocked file read is a hard stop, a blocked shell command is a prompt that can be approved past.
 - [ ] **Open `DIVERGENCES.md` empty at repository root.** Format in `patterns/divergence-log.md`, skeleton in `templates/divergences-template.md`. Opening it before it is needed is deliberate. A log created at the moment of first need typically receives one entry and is then abandoned.
+- [ ] **Copy the reference material into `docs/harness/`.** The eleven pattern documents plus the rubric, pull request, and release note templates, with a `VERSION` file recording the kit commit they came from. Vendoring rather than referencing a path outside the repository keeps the project readable by anyone who clones it. The copy is a snapshot and does not update when the kit does; comparing `VERSION` against the kit is what makes drift visible.
 
 The scaffold costs roughly an hour and produces nothing visible. On short projects that cost is not recovered.
 

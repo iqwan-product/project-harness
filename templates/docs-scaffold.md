@@ -31,6 +31,7 @@ An index pointing at a moved file is worse than no index, because it is trusted.
 | `verdicts/` | Grader output |
 | `qa/` | Test cases and run reports |
 | `evidence/` | Run-state, untracked |
+| `harness/` | Vendored reference material from the kit |
 
 ## Root files
 
@@ -130,6 +131,20 @@ Test cases and reports are tracked. Screenshots are not: large, numerous, and no
 Working artifacts produced during a run. Primarily the orchestrator's run-state file.
 
 Untracked, apart from this README. These exist so a dead session can resume, and have no value once the step merges.
+```
+
+---
+
+## `docs/harness/README.md`
+
+```markdown
+# Harness
+
+Reference material vendored from the project harness kit. Read while writing documents, rubrics, and prompts. Never executed.
+
+Do not edit these files here. Changes belong upstream in the kit, and are pulled back by re-copying.
+
+`VERSION` records the kit commit this copy came from. Where the kit has moved on, re-copy `patterns/` and `templates/` and update `VERSION`.
 ```
 
 ---

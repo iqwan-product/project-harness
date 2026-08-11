@@ -32,13 +32,18 @@ Start with `STARTUP-SEQUENCE.md`. The patterns are read when the checklist point
 
 ## Getting started
 
-1. Read `STARTUP-SEQUENCE.md`.
-2. Run `prompts/relevance-check.md` in Claude Code against your project. It produces a project-local checklist with every item marked apply, defer, or drop.
-3. Review the drops by hand. Automated relevance passes agree with themselves.
-4. Run `prompts/project-init.md` to create the Phase 1 floor.
-5. Work through Phase 2 and Phase 3.
+1. Clone this repo somewhere permanent. Prompts point at that path, and the reference material is copied from there into each project.
 
-The gates open later, on their triggers.
+```
+git clone https://github.com/<owner>/project-harness.git ~/project-harness
+```
+
+2. Read `STARTUP-SEQUENCE.md`.
+3. Run `prompts/project-init.md` in Claude Code. It creates the repository if needed, installs the agent roles and document structure, and copies the reference patterns into `docs/harness/`.
+4. Run `prompts/relevance-check.md` against the project. It produces a project-local checklist with every item marked apply, defer, or drop. Review the drops by hand; automated relevance passes agree with themselves.
+5. Work through the core documents and the trial run.
+
+Steps 3 and 4 run in either order. The floor is cheap and near-universal, so it is often set up before the project's scope is settled. The relevance check earns its keep mainly in deciding when the four gates open, which is a later question.
 
 ---
 

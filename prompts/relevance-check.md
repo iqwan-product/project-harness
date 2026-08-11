@@ -1,6 +1,6 @@
 # Relevance Check
 
-Phase 0 prompt. Paste into Claude Code in the new project's repository, or in an empty directory where the repository does not exist yet.
+Paste into Claude Code from the project's directory. Runs before or after the project floor is set up; neither order is required.
 
 It produces a project-local copy of the startup checklist with every item marked. The output is a starting position, not a decision. Read what it dropped.
 
@@ -8,6 +8,7 @@ It produces a project-local copy of the startup checklist with every item marked
 
 ## Before pasting
 
+The kit must be readable from disk. Where the project floor is already set up, the pattern documents are at `docs/harness/patterns/` inside the project. Otherwise, point at the kit clone.
 Answer the four fit-check questions and paste the answers with the prompt.
 
 1. How many surfaces does this project have?
@@ -25,10 +26,11 @@ Where the stack is already chosen, say what it is. Where it is not, say so.
 You are helping set up a new project using a startup checklist. Your job is to
 decide which items apply, not to execute any of them.
 
+Kit path: <PATH TO KIT CLONE>
 Read these files:
 
-1. STARTUP-SEQUENCE.md — the checklist
-2. patterns/*.md — the reference material each item points at
+1. <kit>/STARTUP-SEQUENCE.md — the checklist
+2. The pattern documents each item points at. Use docs/harness/patterns/ inside this project where it exists, otherwise <kit>/patterns/.
 
 Here is the project:
 

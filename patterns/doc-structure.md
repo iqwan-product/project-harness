@@ -19,7 +19,8 @@ docs/
 ├── plans/                Implementation plans, Path A steps only
 ├── verdicts/             Grader output
 ├── qa/                   Test cases and run reports
-└── evidence/             Run-state and working artifacts
+├── evidence/             Run-state and working artifacts
+└── harness/              Vendored reference material
 ```
 
 `DIVERGENCES.md` sits at the documentation root rather than inside a directory because it is written across every step and read constantly. Some projects place it at repository root instead. Either works; what matters is that it is not nested where it can be forgotten.
@@ -82,6 +83,24 @@ Working artifacts produced during a run. Primarily the orchestrator's run-state 
 
 Untracked. These exist to let a dead session resume and have no value once the step merges. Add the directory to `.gitignore`, keeping a tracked stub README so the directory exists in a fresh clone.
 
+### `harness/`
+
+Reference material copied from the harness kit: the pattern documents and the templates the project uses while writing rubrics, pull requests, and release notes. Read while authoring; never executed.
+
+```
+harness/
+├── README.md
+├── VERSION
+├── patterns/
+└── templates/
+```
+
+Tracked. Vendoring rather than referencing a path outside the repository keeps the project readable by anyone who clones it, without requiring the kit on their disk.
+
+Not edited in place. Changes belong upstream in the kit and are pulled back by re-copying. `VERSION` records the kit commit the copy came from, which is what makes drift visible.
+
+This directory differs from the other six in that its contents are authored elsewhere. The six hold work produced by this project; `harness/` holds material describing how that work is done.
+
 ---
 
 ## Root files
@@ -120,6 +139,7 @@ The log of shipped code knowingly departing from spec. Format in `patterns/diver
 | `qa/*/test-cases.md`, `report-*.md` | Yes | Regression basis |
 | `qa/*/screenshots/` | No | Volume, no diff value |
 | `evidence/` | No | Transient, consumed within one run |
+| `harness/` | Yes | Reference material; vendored so a clone is self-contained |
 
 ---
 
