@@ -37,7 +37,7 @@ Four states. Keep them literal and greppable.
 | Marker | Meaning |
 |---|---|
 | Not started | No branch, no rubric |
-| In progress | Rubric exists or work has begun |
+| In progress | Work has begun. A rubric that exists but is unstarted is not in progress |
 | Done | Merged to the default branch |
 | Blocked | Cannot proceed; the blocking condition is named inline |
 
@@ -122,3 +122,4 @@ When a step is dropped, mark it dropped with a reason. Same reasoning.
 - `patterns/rubric-shape.md` for expanding a step into criteria.
 - `patterns/agent-pattern.md` for what the orchestrator verifies in its preconditions.
 - `patterns/architecture-doc.md` for deferred decisions that generate steps.
+- `patterns/work-item-handoff.md` for the tracker artifact a step is turned into.
