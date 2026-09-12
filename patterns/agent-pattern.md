@@ -140,7 +140,7 @@ Encode these in every orchestrator.
 
 - No commits to the default branch without a pull request.
 - The verdict file never appears in the implementation pull request diff. It is written untracked in the worktree and swept into a separate documentation-only pull request at Stage 8. Mixing an evaluation artifact into the diff it evaluates makes the diff self-referential and pollutes review.
-- The pull request stays in draft until converged. The owner marks it ready. Marking ready is what triggers the expensive review checks, so the orchestrator does not do it.
+- The pull request stays in draft until converged. The owner decides when it is marked ready; the orchestrator performs the action at Stage 8. Marking ready triggers the expensive review checks, so it does not happen before the Stage 7 checkpoint.
 - Genuine build-time deviations from spec are logged with a removal trigger. A planned spec change is not a divergence.
 - Worktree cleanup is the orchestrator's responsibility, at Stage 8 and Stage 9 both. Orphaned worktrees accumulate silently.
 
@@ -182,3 +182,4 @@ Before handing an orchestrator prompt to a run:
 - `patterns/rubric-shape.md` for what the grader grades against.
 - `patterns/build-sequence.md` for whether a step needs a plan before an orchestrator.
 - `templates/.claude/agents/` for the four role definitions.
+- `patterns/work-item-handoff.md` for the work item a step's preconditions are checked against.

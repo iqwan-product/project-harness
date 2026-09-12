@@ -14,6 +14,7 @@ Three things:
 |---|---|
 | `STARTUP-SEQUENCE.md` | The checklist. Three phases of setup, four gates that open later, and a set of standing rules. |
 | `patterns/` | Reference material. What goes in each document, how the agent workflow runs, when a gate opens. |
+| `skills/` | Tool-specific implementations of patterns. `jira-work-items` is optimised for Jira and untested against other trackers. |
 | `templates/` and `prompts/` | Files to copy, and prompts to paste into Claude Code or Claude chat project files. |
 
 Start with `STARTUP-SEQUENCE.md`. The patterns are read when the checklist points at them, not upfront.
@@ -52,9 +53,9 @@ It writes no product content. No architecture, no stack, no specs. Those are dec
 
 Claude Code reads the patterns from disk. Chat cannot, so it needs its own copy.
 
-Create a Claude Project for the work, then add these twelve files to its project knowledge, from the kit clone:
+Create a Claude Project for the work, then add these thirteen files to its project knowledge, from the kit clone:
 
-- all eleven files in `patterns/`
+- all twelve files in `patterns/`
 - `templates/rubric-template.md`
 
 Chat reads project knowledge automatically. No prompt is needed to activate it.
@@ -102,8 +103,17 @@ patterns/
   divergence-log.md        Recording deliberate deviations from spec
   three-tool-lanes.md      Tool boundaries and document-edit routing
   skill-pattern.md         When a skill is the right container
+  work-item-handoff.md     Tracker handoff artifact: what it carries, its gates
   pr-and-release-writing.md  Writing for readers rather than for yourself
   ci-and-security-gate.md  What Gate A and Gate B involve
+
+skills/
+  jira-work-items/
+    SKILL.md               Create, hydrate, gate, transition, close a Jira work item
+    references/
+      configuration.md     Values this skill needs, supplied by the adopting project
+      ticket-anatomy.md    Description templates, one per ticket kind
+      transitions.md       State model and gate manifest
 
 templates/
   .claude/agents/          Four role definitions
